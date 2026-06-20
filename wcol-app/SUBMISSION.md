@@ -23,9 +23,9 @@ The chain is the referee.
 
 ## Live Demo
 
-**Demo URL:** [Add Vercel URL here]  
-**GitHub:** [Add GitHub URL here]  
-**Program ID:** MemoSq4gqABAXKb96qnH8TysNcWxMyWCqXgDLGmfcHr (Memo) + Custom Anchor IDL  
+**Demo URL:** http://localhost:3000  
+**Program ID:** 3tSTD3jLywE8xsAcsR3G1xWowgvJiU5Guxvk3RSEySw8  
+**Explorer:** https://explorer.solana.com/address/3tSTD3jLywE8xsAcsR3G1xWowgvJiU5Guxvk3RSEySw8?cluster=devnet  
 **Network:** Solana devnet
 
 ---
@@ -34,7 +34,7 @@ The chain is the referee.
 
 | Instruction | Description |
 |---|---|
-| `commit_prediction` | Stores oracle prediction hash + Clock timestamp on-chain via Memo program |
+| `commit_prediction` | Stores oracle prediction hash + Clock timestamp on-chain via custom Anchor program |
 | `mint_fan_proof` | Creates FanProof record proving fan backed oracle before kickoff |
 
 Both instructions write to **Solana devnet** with real block timestamps.
@@ -54,13 +54,14 @@ Both instructions write to **Solana devnet** with real block timestamps.
 ## Tech Stack
 
 - **Blockchain:** Solana devnet
+- **Smart Contract:** Anchor (custom program — not Memo)
 - **Frontend:** Next.js 15 + Tailwind CSS
 - **Auth:** Privy (email login, embedded wallets)
-- **On-chain:** @solana/web3.js + Solana Memo Program
+- **On-chain:** @coral-xyz/anchor + @solana/web3.js
 - **RPC:** Helius devnet
 
 ---
 
 ## Team
 
-Built with solana.new · Superteam MY Hackathon 2026
+Built with solana.new · Anchor · Next.js · Privy · Superteam MY Hackathon 2026
