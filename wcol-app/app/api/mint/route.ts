@@ -42,8 +42,7 @@ export async function POST(req: NextRequest) {
         | "mainnet-beta") || "devnet";
     const rpcUrl = process.env.NEXT_PUBLIC_RPC || clusterApiUrl(cluster);
     const connection = new Connection(
-      process.env.HELIUS_RPC || 
-      "https://devnet.helius-rpc.com/?api-key=105f08c8-b780-4933-9cff-920c55820048",
+      process.env.HELIUS_RPC || "https://api.devnet.solana.com",
       "confirmed"
     );
     const adminKeypair = getAdminKeypair();
@@ -61,7 +60,7 @@ export async function POST(req: NextRequest) {
 
     // Anchor setup
     const idl = JSON.parse(fs.readFileSync(
-      path.join(process.cwd(), '../target/idl/wcol.json'), 
+      path.join(process.cwd(), 'data/wcol.json'), 
       'utf8'
     ))
 
