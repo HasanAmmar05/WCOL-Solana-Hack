@@ -1,6 +1,6 @@
 use anchor_lang::prelude::*;
 
-declare_id!("Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS");
+declare_id!("3tSTD3jLywE8xsAcsR3G1xWowgvJiU5Guxvk3RSEySw8");
 
 #[program]
 pub mod wcol {

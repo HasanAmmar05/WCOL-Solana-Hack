@@ -2,11 +2,8 @@ import { NextRequest, NextResponse } from "next/server";
 import { Connection, Keypair, PublicKey, clusterApiUrl } from "@solana/web3.js";
 import { AnchorProvider, Program } from "@coral-xyz/anchor";
 import { createHash } from "crypto";
-
-// Use relative path to workspace root
-import idl from "../../../data/wcol.json";
-
-const PROGRAM_ID = process.env.NEXT_PUBLIC_PROGRAM_ID || "PLACEHOLDER";
+import fs from "fs";
+import path from "path";
 
 const PREDICTION_TEXT =
   "Spain's squad depth, tactical discipline, and recent form give them a clear edge. " +
@@ -62,10 +59,14 @@ export async function POST(req: NextRequest) {
     };
 
     // Anchor setup
-    const provider = new AnchorProvider(connection, wallet, {
-      commitment: "confirmed",
-    });
-    const program = new Program(idl as any, provider);
+    const idl = JSON.parse(fs.readFileSync(
+      path.join(process.cwd(), 'target/idl/wcol.json'), 
+      'utf8'
+    ))
+
+    const PROGRAM_ID = new PublicKey("3tSTD3jLywE8xsAcsR3G1xWowgvJiU5Guxvk3RSEySw8")
+    const provider = new AnchorProvider(connection, wallet, {})
+    const program = new Program(idl, provider)
 
     // Generate sha256 hash of prediction text
     const hash = createHash("sha256").update(PREDICTION_TEXT).digest();
