@@ -1,0 +1,8 @@
+node_modules/
+.next/
+target/
+test-ledger/
+.anchor/
+*.log
+.DS_Store
+anchor.tar.gz

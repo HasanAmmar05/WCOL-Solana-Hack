@@ -1,0 +1,6 @@
+[
+  { "id": "m1", "home": "Mexico", "away": "South Africa", "home_code": "MEX", "away_code": "RSA", "result": "home_win", "score": "2-0", "date": "2026-06-11" },
+  { "id": "m2", "home": "Germany", "away": "Curaçao", "home_code": "GER", "away_code": "CUW", "result": "home_win", "score": "7-1", "date": "2026-06-14" },
+  { "id": "m3", "home": "Switzerland", "away": "Bosnia", "home_code": "SUI", "away_code": "BIH", "result": "home_win", "score": "4-1", "date": "2026-06-18" },
+  { "id": "m4", "home": "Canada", "away": "Qatar", "home_code": "CAN", "away_code": "QAT", "result": "home_win", "score": "6-0", "date": "2026-06-18" }
+]

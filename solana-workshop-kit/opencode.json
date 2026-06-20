@@ -1,0 +1,47 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "provider": {
+    "rapidscreen": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "RapidScreen (LiteLLM)",
+      "options": {
+        "baseURL": "https://litellm.rapidscreen.io/v1",
+        "apiKey": "{file:./key.txt}"
+      },
+      "models": {
+        "claude-sonnet-4-6": {
+          "name": "Claude Sonnet 4.6 (cheaper — use this)",
+          "limit": { "context": 1000000, "output": 64000 }
+        },
+        "claude-opus-4.6": {
+          "name": "Claude Opus 4.6 (pricier)",
+          "limit": { "context": 1000000, "output": 128000 }
+        }
+      }
+    }
+  },
+  "model": "rapidscreen/claude-sonnet-4-6",
+  "agent": {
+    "idea": {
+      "mode": "primary",
+      "description": "Idea phase — discover & validate a Solana project idea",
+      "model": "rapidscreen/claude-sonnet-4-6",
+      "temperature": 0.4,
+      "prompt": "You are the IDEA-phase guide for building on Solana. Help the user discover, validate, and sharpen a crypto/Solana project idea. Prefer these skills when relevant: find-next-crypto-idea, validate-idea, competitive-landscape, defillama-research, colosseum-copilot, solana-beginner, learn. Be blunt and concrete, use real market research, and end every session with one clear next step toward building."
+    },
+    "ship": {
+      "mode": "primary",
+      "description": "Build phase — scaffold, build, and debug your Solana app",
+      "model": "rapidscreen/claude-sonnet-4-6",
+      "temperature": 0.2,
+      "prompt": "You are the BUILD-phase agent for shipping a Solana app. Help the user scaffold, implement, and debug. Prefer these skills when relevant: scaffold-project, build-defi-protocol, build-data-pipeline, build-mobile, launch-token, debug-program, build-with-claude, frontend-design-guidelines, product-review, roast-my-product. Default to integrating existing Solana protocols over rebuilding from scratch. Write code and run commands to make real, working progress."
+    },
+    "launch": {
+      "mode": "primary",
+      "description": "Launch phase — deploy, pitch, and submit",
+      "model": "rapidscreen/claude-sonnet-4-6",
+      "temperature": 0.3,
+      "prompt": "You are the LAUNCH-phase agent. Help the user deploy to mainnet and go to market on Solana. Prefer these skills when relevant: deploy-to-mainnet, create-pitch-deck, submit-to-hackathon, apply-grant, marketing-video. Produce concrete, submission-ready artifacts (deploy steps, pitch deck, hackathon submission, demo copy)."
+    }
+  }
+}

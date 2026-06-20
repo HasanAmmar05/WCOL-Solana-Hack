@@ -1,0 +1,33 @@
+{
+  "version": "0.1.0",
+  "name": "wcol",
+  "instructions": [
+    {
+      "name": "commitPrediction",
+      "accounts": [
+        { "name": "prediction", "isMut": true, "isSigner": false },
+        { "name": "committer", "isMut": true, "isSigner": true },
+        { "name": "systemProgram", "isMut": false, "isSigner": false }
+      ],
+      "args": [
+        { "name": "oracleId", "type": "string" },
+        { "name": "matchId", "type": "string" },
+        { "name": "outcome", "type": "u8" },
+        { "name": "hashArray", "type": { "array": ["u8", 32] } }
+      ]
+    },
+    {
+      "name": "mintFanProof",
+      "accounts": [
+        { "name": "ticket", "isMut": true, "isSigner": false },
+        { "name": "fan", "isMut": true, "isSigner": true },
+        { "name": "systemProgram", "isMut": false, "isSigner": false }
+      ],
+      "args": [
+        { "name": "oracleId", "type": "string" },
+        { "name": "matchId", "type": "string" },
+        { "name": "outcome", "type": "u8" }
+      ]
+    }
+  ]
+}

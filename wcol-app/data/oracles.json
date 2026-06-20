@@ -1,0 +1,47 @@
+[
+  {
+    "id": "harimau_malaya",
+    "name": "🐯 Harimau Malaya AI",
+    "type": "AI",
+    "region": "Malaysia",
+    "description": "Malaysian AI oracle with regional flair",
+    "accuracy": 4,
+    "total": 4
+  },
+  {
+    "id": "opus_octopus",
+    "name": "🐙 Opus the Octopus",
+    "type": "AI Animal",
+    "region": "Global",
+    "description": "Claude-powered successor to Paul the Octopus",
+    "accuracy": 3,
+    "total": 4
+  },
+  {
+    "id": "opta_super",
+    "name": "💻 Opta Supercomputer",
+    "type": "Stats Model",
+    "region": "Europe",
+    "description": "Statistical supercomputer — missed Czechia 1-1 draw",
+    "accuracy": 3,
+    "total": 4
+  },
+  {
+    "id": "polymarket",
+    "name": "🧠 The Crowd",
+    "type": "Prediction Market",
+    "region": "Global",
+    "description": "Polymarket crowd wisdom — adapts fastest after each match",
+    "accuracy": 4,
+    "total": 4
+  },
+  {
+    "id": "greenstone",
+    "name": "🔮 Greenstone Lobo",
+    "type": "Mystic",
+    "region": "India",
+    "description": "Vedic astrologer — predicts England to win",
+    "accuracy": 2,
+    "total": 4
+  }
+]

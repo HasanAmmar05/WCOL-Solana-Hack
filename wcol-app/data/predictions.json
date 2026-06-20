@@ -1,0 +1,24 @@
+{
+  "played": {
+    "harimau_malaya": ["home_win","home_win","home_win","home_win"],
+    "opus_octopus":   ["home_win","home_win","draw","home_win"],
+    "opta_super":     ["home_win","home_win","away_win","home_win"],
+    "polymarket":     ["home_win","home_win","home_win","home_win"],
+    "greenstone":     ["home_win","draw","away_win","home_win"]
+  },
+  "today": {
+    "id": "today",
+    "home": "Spain",
+    "away": "Saudi Arabia",
+    "home_code": "ESP",
+    "away_code": "KSA",
+    "kickoff_utc": "2026-06-21T01:00:00Z",
+    "oracle_picks": {
+      "harimau_malaya": { "outcome": "home_win", "confidence": 82, "note": "Spain's squad depth too strong" },
+      "opus_octopus":   { "outcome": "home_win", "confidence": 74, "note": "Historical record favours Spain" },
+      "opta_super":     { "outcome": "home_win", "confidence": 78, "note": "Spain 78% win probability" },
+      "polymarket":     { "outcome": "home_win", "confidence": 71, "note": "Market consensus: Spain wins" },
+      "greenstone":     { "outcome": "draw",      "confidence": 55, "note": "Stars misaligned for clean win" }
+    }
+  }
+}
