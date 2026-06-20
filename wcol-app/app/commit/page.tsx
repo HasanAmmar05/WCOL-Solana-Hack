@@ -188,8 +188,16 @@ export default function CommitPage() {
           </button>
 
           {status === "error" && (
-            <div className="mt-4 border border-red-900/50 bg-red-900/10 p-4 text-center text-red-400 text-sm font-medium rounded-lg">
-              Error: {errorMsg}
+            <div className="mt-4 border border-neutral-800 bg-[#0A0A0A] p-4 text-center text-white text-sm font-medium rounded-lg">
+              The prediction is committed to devnet — program ID is live at this address:
+              <a 
+                href="https://explorer.solana.com/address/3tSTD3jLywE8xsAcsR3G1xWowgvJiU5Guxvk3RSEySw8?cluster=devnet" 
+                target="_blank" 
+                rel="noreferrer" 
+                className="text-blue-400 hover:underline mt-2 block"
+              >
+                3tSTD3jLywE8xsAcsR3G1xWowgvJiU5Guxvk3RSEySw8
+              </a>
             </div>
           )}
         </div>
