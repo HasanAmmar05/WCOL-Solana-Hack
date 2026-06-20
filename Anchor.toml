@@ -5,10 +5,10 @@ resolution = true
 skip-lint = false
 
 [programs.localnet]
-wcol = "Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS"
+wcol = "3tSTD3jLywE8xsAcsR3G1xWowgvJiU5Guxvk3RSEySw8"
 
 [programs.devnet]
-wcol = "Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS"
+wcol = "3tSTD3jLywE8xsAcsR3G1xWowgvJiU5Guxvk3RSEySw8"
 
 [registry]
 url = "https://api.apr.dev"

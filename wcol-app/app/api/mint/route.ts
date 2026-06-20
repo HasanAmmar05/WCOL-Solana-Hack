@@ -41,7 +41,11 @@ export async function POST(req: NextRequest) {
         | "testnet"
         | "mainnet-beta") || "devnet";
     const rpcUrl = process.env.NEXT_PUBLIC_RPC || clusterApiUrl(cluster);
-    const connection = new Connection(rpcUrl, "confirmed");
+    const connection = new Connection(
+      process.env.HELIUS_RPC || 
+      "https://devnet.helius-rpc.com/?api-key=105f08c8-b780-4933-9cff-920c55820048",
+      "confirmed"
+    );
     const adminKeypair = getAdminKeypair();
     const wallet = {
       publicKey: adminKeypair.publicKey,
@@ -57,13 +61,14 @@ export async function POST(req: NextRequest) {
 
     // Anchor setup
     const idl = JSON.parse(fs.readFileSync(
-      path.join(process.cwd(), 'target/idl/wcol.json'), 
+      path.join(process.cwd(), '../target/idl/wcol.json'), 
       'utf8'
     ))
 
-    const PROGRAM_ID = new PublicKey("3tSTD3jLywE8xsAcsR3G1xWowgvJiU5Guxvk3RSEySw8")
-    const provider = new AnchorProvider(connection, wallet, {})
-    const program = new Program(idl, provider)
+    const PROGRAM_ID = new PublicKey("3tSTD3jLywE8xsAcsR3G1xWowgvJiU5Guxvk3RSEySw8");
+    idl.address = PROGRAM_ID.toBase58();
+    const provider = new AnchorProvider(connection, wallet, {});
+    const program = new Program(idl, provider);
 
     const [ticketPda] = PublicKey.findProgramAddressSync(
       [
